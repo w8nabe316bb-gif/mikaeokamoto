@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>作品ギャラリー</title>
+<link rel="stylesheet" href="styles.css">
+
+  <style>
+
+    body {
+      margin: 0;
+      overflow-x: hidden;
+      line-height: 28px;
+        font-family: 'Cormorant Garamond', 'Yu Mincho', '游明朝', 'Hiragino Mincho ProN', 'Noto Serif JP', serif;
+  font-variant-numeric: lining-nums tabular-nums;
+  font-feature-settings: "lnum", "tnum", "palt";
+  font-weight: 100;
+  letter-spacing: 0.04em;
+        color: #222;
+        background: #efedec;
+    }
+    .gallery {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      padding: 120px 50px 50px 50px;
+      transition: all 0.5s ease;
+    }
+
+    .sumnail{
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+        gap: 10px;
+        width: 100%;
+        height: fit-content;
+        transition:all 0.5s ease;
+    }
+
+    .gallery img {
+      width: 100%;
+      height: auto;
+      cursor: pointer;
+      transition: transform 0.3s;
+    }
+    .gallery img:hover {
+      transform: scale(1.03);
+    }
+    .viewer {
+      position: fixed;
+      top: 0;
+      right: -85%;
+      width: 85%;
+      height: 100%;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      padding: 20px;
+      transition: all 0.5s ease;
+      overflow-y: auto;
+      opacity: 0;
+    }
+    .viewer.active {
+      right: 0;
+      opacity: 1;
+    }
+
+    .sumnail.active {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(100%, 1fr));
+        width: 120px;
+        gap: 0;
+
+    }
+
+    .gallery.active {
+        padding: 10px 10px 10px 10px;
+    }
+    .viewer img {
+      max-width: 100%;
+      height: auto;
+    }
+    .caption {
+      margin-top: 14px;
+      text-align: center;
+      font-size: 14px;
+    }
+    .close-btn {
+    position: absolute;
+        top: 16px;
+      align-self: flex-end;
+      cursor: pointer;
+      font-size: 24px;
+      margin-bottom: 10px;
+      z-index: 800;
+    }
+  </style>
+</head>
+<body>
+
+    <header>
+    <div class="site-header">
+   <div class="flex">
+   <div class="flexbox">
+    <a href="index.html" class="logo">
+      <img src="images/titlelogo.svg" alt="Mikae Okamoto">
+      <p>Oil Paintings</p>
+    </a>
+     </div>
+  <div class="flexbox">
+    <nav class="main-nav">
+      <a class="link" href="#">WORKS</a>
+      <a class="link" href="index.html/#news">NEWS</a>
+      <a class="link" href="index.html/#profile">PROFILE</a>
+      <a class="link" href="index.html/#contact">CONTACT</a>
+    </nav>
+     </div>
+    </div>
+  </header>
+
+  <div class="gallery">
+    <div class="sumnail">
+    <img src="sum/2025_yumon.jpg" alt="作品1" data-caption="作品1の説明テキスト">
+    <img src="sum/2025_shiragiku.jpg" alt="作品2" data-caption="作品2の説明テキスト">
+    <img src="sum/2025_2bunno3.jpg" alt="作品3" data-caption="作品3の説明テキスト">
+    <img src="sum/2024_Untitled.jpg" alt="作品3" data-caption="作品3の説明テキスト">
+    <img src="sum/2024_mudai.jpg" alt="作品3" data-caption="作品3の説明テキスト">
+    <img src="sum/2024_electricity.jpg" alt="作品3" data-caption="作品3の説明テキスト">
+    <img src="sum/2024_coronbus.jpg" alt="作品3" data-caption="作品3の説明テキスト">
+    <img src="sum/2023_shuen.jpg" alt="作品3" data-caption="作品3の説明テキスト">
+    <img src="sum/2023_omamori.jpg" alt="作品3" data-caption="作品3の説明テキスト">
+    <img src="sum/2023_maigo.jpg" alt="作品3" data-caption="作品3の説明テキスト">
+    <img src="sum/2023_LOVE.jpg" alt="作品3" data-caption="作品3の説明テキスト">
+    <img src="sum/2023_ichigo.jpg" alt="作品3" data-caption="作品3の説明テキスト">
+    <img src="sum/2023_Group.jpg" alt="作品3" data-caption="作品3の説明テキスト">
+    <img src="sum/2023_Group-image.jpg" alt="作品3" data-caption="作品3の説明テキスト">
+    <img src="sum/2022_shinennotomoshibi.jpg" alt="作品3" data-caption="作品3の説明テキスト">
+    <img src="sum/2022_issui.jpg" alt="作品3" data-caption="作品3の説明テキスト">
+    <img src="sum/2022_ifu.jpg" alt="作品3" data-caption="作品3の説明テキスト">
+    <img src="sum/2022_hanamoyuru.jpg" alt="作品3" data-caption="作品3の説明テキスト">
+    <img src="sum/2021_yumihari.jpg" alt="作品3" data-caption="作品3の説明テキスト">
+    <img src="sum/2021_shinoku.jpg" alt="作品3" data-caption="作品3の説明テキスト">
+    <img src="sum/2021_oboroge.jpg" alt="作品3" data-caption="作品3の説明テキスト">
+    <img src="sum/2021_bizu.jpg" alt="作品3" data-caption="作品3の説明テキスト">
+    <img src="sum/2020_yakusoku.jpg" alt="作品3" data-caption="作品3の説明テキスト">
+    <img src="sum/2020_ukou.jpg" alt="作品3" data-caption="作品3の説明テキスト">
+    <img src="sum/2020_tachi.jpg" alt="作品3" data-caption="作品3の説明テキスト">
+    <img src="sum/2020_joudo.jpg" alt="作品3" data-caption="作品3の説明テキスト">
+    <img src="sum/2020_imagine.jpg" alt="作品3" data-caption="作品3の説明テキスト">
+    <img src="sum/2019_lost-heart.jpg" alt="作品3" data-caption="作品3の説明テキスト">
+    <img src="sum/2019_kosakura.jpg" alt="作品3" data-caption="作品3の説明テキスト">
+    <img src="sum/2018_kokoro.jpg" alt="作品3" data-caption="作品3の説明テキスト">
+    <img src="sum/2018-19_microcosmos.jpg" alt="作品3" data-caption="作品3の説明テキスト">
+    <img src="sum/2016_Ho_O.jpg" alt="作品3" data-caption="作品3の説明テキスト">
+    <img src="sum/2016_A_O.jpg" alt="作品3" data-caption="作品3の説明テキスト">
+    <img src="sum/2015_Yo_O.jpg" alt="作品3" data-caption="作品3の説明テキスト">
+    <img src="sum/2015_Mi_E.jpg" alt="作品3" data-caption="作品3の説明テキスト">
+</div>
+
+  </div>
+
+  <div class="viewer" id="viewer">
+    <span class="close-btn" id="closeBtn">✕</span>
+    <img id="viewerImg" src="" alt="拡大画像">
+    <div class="caption" id="viewerCaption"></div>
+  </div>
+
+  <script>
+    const galleryImages = document.querySelectorAll('.gallery img');
+    const viewer = document.getElementById('viewer');
+    const viewerImg = document.getElementById('viewerImg');
+    const viewerCaption = document.getElementById('viewerCaption');
+    const closeBtn = document.getElementById('closeBtn');
+
+    galleryImages.forEach(img => {
+      img.addEventListener('click', () => {
+        viewerImg.src = img.src;
+        viewerCaption.textContent = img.dataset.caption;
+        viewer.classList.add('active');
+        document.querySelector('.sumnail').classList.add('active');
+        document.querySelector('.gallery').classList.add('active');
+      });
+    });
+
+    closeBtn.addEventListener('click', () => {
+      viewer.classList.remove('active');
+        document.querySelector('.sumnail').classList.remove('active');
+        document.querySelector('.gallery').classList.remove('active');
+    });
+
+
+</script>
+
+</body>
+</html>
