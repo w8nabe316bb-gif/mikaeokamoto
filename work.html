@@ -3,8 +3,10 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>作品ギャラリー</title>
-<link rel="stylesheet" href="styles.css">
+  <title>Mikae Okamoto — Portfolio</title>
+
+
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500&display=swap" rel="stylesheet">
 
   <style>
 
@@ -20,6 +22,59 @@
         color: #222;
         background: #efedec;
     }
+
+/* ヘッダー */
+.site-header {
+  position: fixed;
+  top: 0;
+  margin: 0;
+  padding: 50px 50px 0px 50px;
+  height: auto;
+  width: 100%;
+  max-width: 1080px;
+  z-index: 500;
+  background: #efedec;
+}
+
+.site-header .logo img {
+  display: block;
+  margin: 0 0 -10px -5px;
+  max-width: 260px;
+  height: auto;
+}
+
+.main-nav {
+  position: absolute;
+  width: 100%;
+  padding: 0;
+  text-align: left;
+}
+
+.main-nav a {
+  margin-right: 0.5rem;
+  font-weight: 100;
+  font-size: 1.2rem;
+  display: inline-block;
+  vertical-align: middle;
+}
+
+a {
+  text-decoration: none;
+  color: #222;
+}
+
+.flex {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+  width: 100%;
+}
+
+.flexbox {
+  width: calc(50% - 10px);
+  height: auto;
+}
+
     .gallery {
       display: flex;
       flex-wrap: wrap;
@@ -82,19 +137,22 @@
       height: auto;
     }
     .caption {
-      margin-top: 14px;
+        margin-top: 20px;
       text-align: center;
       font-size: 14px;
     }
     .close-btn {
-    position: absolute;
-        top: 16px;
+        position: fixed;
       align-self: flex-end;
       cursor: pointer;
       font-size: 24px;
       margin-bottom: 10px;
       z-index: 800;
     }
+
+    .site-header.active {
+        display: none;
+    }   
   </style>
 </head>
 <body>
@@ -180,6 +238,7 @@
         viewer.classList.add('active');
         document.querySelector('.sumnail').classList.add('active');
         document.querySelector('.gallery').classList.add('active');
+        document.querySelector('.site-header').classList.add('active');
       });
     });
 
@@ -187,6 +246,7 @@
       viewer.classList.remove('active');
         document.querySelector('.sumnail').classList.remove('active');
         document.querySelector('.gallery').classList.remove('active');
+        document.querySelector('.site-header').classList.remove('active');
     });
 
 
