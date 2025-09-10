@@ -34,8 +34,7 @@
   margin: 0;
   padding: 50px 50px 0px 50px;
   height: auto;
-  width: 100%;
-  max-width: 1080px;
+  width: calc(100% - 100px);
   z-index: 500;
   background: #efedec;
 }
@@ -43,7 +42,7 @@
 .site-header .logo img {
   display: block;
   margin: 0 0 -10px -5px;
-  max-width: 260px;
+  width: 260px;
   height: auto;
 }
 
@@ -83,13 +82,11 @@ a {
       display: flex;
       flex-wrap: wrap;
       gap: 10px;
-      padding: 120px 50px 50px 50px;
       transition: all 0.5s ease;
     }
 
-    .sumnail{
+    .thumbnail{
         display: grid;
-        grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
         gap: 10px;
         width: 100%;
         height: fit-content;
@@ -108,14 +105,13 @@ a {
     .viewer {
       position: fixed;
       top: 0;
-      right: -85%;
-      width: 85%;
+      right: calc(-100% + 120px);
+      width: calc(100% - 120px);
       height: 100%;
       display: flex;
       flex-direction: column;
       align-items: center;
       justify-content: center;
-      padding: 20px;
       transition: all 0.5s ease;
       overflow-y: auto;
       opacity: 0;
@@ -125,12 +121,11 @@ a {
       opacity: 1;
     }
 
-    .sumnail.active {
+    .thumbnail.active {
         display: grid;
         grid-template-columns: repeat(auto-fit, minmax(100%, 1fr));
         width: 120px;
         gap: 0;
-
     }
 
     .gallery.active {
@@ -145,14 +140,14 @@ a {
       text-align: center;
       font-size: 14px;
     }
-    .close-btn {
-        position: fixed;
-      align-self: flex-end;
-      cursor: pointer;
-      font-size: 24px;
-      margin-bottom: 10px;
-      z-index: 800;
-    }
+   .close-btn {
+  position: fixed;
+  top: 20px;      /* 上から20px */
+  right: 20px;    /* 右から20px */
+  cursor: pointer;
+  font-size: 24px;
+  z-index: 800;
+}
 
     .site-header.active {
         display: none;
@@ -160,6 +155,55 @@ a {
     .link:hover {
   color: rgb(16, 196, 139);
 }
+
+.viewer-year {
+  font-size: 12px;
+  color: #666;
+  margin-top: 4px;
+}
+
+/* 781px以上（PC向け） */
+@media (min-width: 781px) {
+  .thumbnail {
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  }
+  .gallery {
+    padding: 120px 50px 50px 50px;
+  }
+}
+
+/* 780px以下（スマホ向け） */
+@media (max-width: 780px) {
+    .main-nav {
+        display: none;
+    }
+  .thumbnail {
+     grid-template-columns: repeat(2, 1fr); 
+     gap: 10px;
+  }
+  .gallery {
+    padding: 120px 20px 20px 20px;
+  }
+      .gallery.active {
+        padding: 0px;
+    }
+  .site-header {
+  padding: 20px 20px 0px 20px;
+    width: calc(100% - 40px);
+}
+    .viewer {
+      right: calc(-100% + 40px);
+      width: calc(100% - 40px);
+    }
+       .thumbnail.active {
+        width: 40px;
+    }
+    .viewer img {
+      max-width: calc(100% - 20px);
+    }
+}
+
+
   </style>
 </head>
 <body>
@@ -176,51 +220,52 @@ a {
   <div class="flexbox">
     <nav class="main-nav">
       <a class="link" href="#">WORKS</a>
-      <a class="link" href="index.html/#news">NEWS</a>
-      <a class="link" href="index.html/#profile">PROFILE</a>
-      <a class="link" href="index.html/#contact">CONTACT</a>
+      <a class="link" href="index.html#news">NEWS</a>
+      <a class="link" href="index.html#profile">PROFILE</a>
+      <a class="link" href="index.html#contact">CONTACT</a>
     </nav>
      </div>
     </div>
   </header>
 
   <div class="gallery">
-    <div class="sumnail">
-    <img src="sum/2025_yumon.jpg" alt="作品1" data-caption="作品1の説明テキスト">
-    <img src="sum/2025_shiragiku.jpg" alt="作品2" data-caption="作品2の説明テキスト">
-    <img src="sum/2025_2bunno3.jpg" alt="作品3" data-caption="作品3の説明テキスト">
-    <img src="sum/2024_Untitled.jpg" alt="作品3" data-caption="作品3の説明テキスト">
-    <img src="sum/2024_mudai.jpg" alt="作品3" data-caption="作品3の説明テキスト">
-    <img src="sum/2024_electricity.jpg" alt="作品3" data-caption="作品3の説明テキスト">
-    <img src="sum/2024_coronbus.jpg" alt="作品3" data-caption="作品3の説明テキスト">
-    <img src="sum/2023_shuen.jpg" alt="作品3" data-caption="作品3の説明テキスト">
-    <img src="sum/2023_omamori.jpg" alt="作品3" data-caption="作品3の説明テキスト">
-    <img src="sum/2023_maigo.jpg" alt="作品3" data-caption="作品3の説明テキスト">
-    <img src="sum/2023_LOVE.jpg" alt="作品3" data-caption="作品3の説明テキスト">
-    <img src="sum/2023_ichigo.jpg" alt="作品3" data-caption="作品3の説明テキスト">
-    <img src="sum/2023_Group.jpg" alt="作品3" data-caption="作品3の説明テキスト">
-    <img src="sum/2023_Group-image.jpg" alt="作品3" data-caption="作品3の説明テキスト">
-    <img src="sum/2022_shinennotomoshibi.jpg" alt="作品3" data-caption="作品3の説明テキスト">
-    <img src="sum/2022_issui.jpg" alt="作品3" data-caption="作品3の説明テキスト">
-    <img src="sum/2022_ifu.jpg" alt="作品3" data-caption="作品3の説明テキスト">
-    <img src="sum/2022_hanamoyuru.jpg" alt="作品3" data-caption="作品3の説明テキスト">
-    <img src="sum/2021_yumihari.jpg" alt="作品3" data-caption="作品3の説明テキスト">
-    <img src="sum/2021_shinoku.jpg" alt="作品3" data-caption="作品3の説明テキスト">
-    <img src="sum/2021_oboroge.jpg" alt="作品3" data-caption="作品3の説明テキスト">
-    <img src="sum/2021_bizu.jpg" alt="作品3" data-caption="作品3の説明テキスト">
-    <img src="sum/2020_yakusoku.jpg" alt="作品3" data-caption="作品3の説明テキスト">
-    <img src="sum/2020_ukou.jpg" alt="作品3" data-caption="作品3の説明テキスト">
-    <img src="sum/2020_tachi.jpg" alt="作品3" data-caption="作品3の説明テキスト">
-    <img src="sum/2020_joudo.jpg" alt="作品3" data-caption="作品3の説明テキスト">
-    <img src="sum/2020_imagine.jpg" alt="作品3" data-caption="作品3の説明テキスト">
-    <img src="sum/2019_lost-heart.jpg" alt="作品3" data-caption="作品3の説明テキスト">
-    <img src="sum/2019_kosakura.jpg" alt="作品3" data-caption="作品3の説明テキスト">
-    <img src="sum/2018_kokoro.jpg" alt="作品3" data-caption="作品3の説明テキスト">
-    <img src="sum/2018-19_microcosmos.jpg" alt="作品3" data-caption="作品3の説明テキスト">
-    <img src="sum/2016_Ho_O.jpg" alt="作品3" data-caption="作品3の説明テキスト">
-    <img src="sum/2016_A_O.jpg" alt="作品3" data-caption="作品3の説明テキスト">
-    <img src="sum/2015_Yo_O.jpg" alt="作品3" data-caption="作品3の説明テキスト">
-    <img src="sum/2015_Mi_E.jpg" alt="作品3" data-caption="作品3の説明テキスト">
+    <div class="thumbnail">
+            <img src="sum/2025_yumon.jpg" alt="作品1" data-caption="作品1の説明テキスト" data-year="2025">
+            <img src="sum/2025_shiragiku.jpg" alt="作品2" data-caption="作品2の説明テキスト" data-year="2025">
+            <img src="sum/2025_2bunno3.jpg" alt="作品3" data-caption="作品3の説明テキスト" data-year="2025">
+            <img src="sum/2024_Untitled.jpg" alt="作品3" data-caption="作品3の説明テキスト" data-year="2024">
+            <img src="sum/2024_mudai.jpg" alt="作品3" data-caption="作品3の説明テキスト" data-year="2024">
+            <img src="sum/2024_electricity.jpg" alt="作品3" data-caption="作品3の説明テキスト" data-year="2024">
+            <img src="sum/2024_coronbus.jpg" alt="作品3" data-caption="作品3の説明テキスト" data-year="2024">
+            <img src="sum/2023_shuen.jpg" alt="作品3" data-caption="作品3の説明テキスト" data-year="2023">
+            <img src="sum/2023_omamori.jpg" alt="作品3" data-caption="作品3の説明テキスト" data-year="2023">
+            <img src="sum/2023_maigo.jpg" alt="作品3" data-caption="作品3の説明テキスト" data-year="2023">
+            <img src="sum/2023_LOVE.jpg" alt="作品3" data-caption="作品3の説明テキスト" data-year="2023">
+            <img src="sum/2023_ichigo.jpg" alt="作品3" data-caption="作品3の説明テキスト" data-year="2023">
+            <img src="sum/2023_Group.jpg" alt="作品3" data-caption="作品3の説明テキスト" data-year="2023">
+            <img src="sum/2023_Group-image.jpg" alt="作品3" data-caption="作品3の説明テキスト" data-year="2023">
+            <img src="sum/2022_shinennotomoshibi.jpg" alt="作品3" data-caption="作品3の説明テキスト" data-year="2022">
+            <img src="sum/2022_issui.jpg" alt="作品3" data-caption="作品3の説明テキスト" data-year="2022">
+            <img src="sum/2022_ifu.jpg" alt="作品3" data-caption="作品3の説明テキスト" data-year="2022">
+            <img src="sum/2022_hanamoyuru.jpg" alt="作品3" data-caption="作品3の説明テキスト" data-year="2022">
+            <img src="sum/2021_yumihari.jpg" alt="作品3" data-caption="作品3の説明テキスト" data-year="2021">
+            <img src="sum/2021_shinoku.jpg" alt="作品3" data-caption="作品3の説明テキスト" data-year="2021">
+            <img src="sum/2021_oboroge.jpg" alt="作品3" data-caption="作品3の説明テキスト" data-year="2021">
+            <img src="sum/2021_bizu.jpg" alt="作品3" data-caption="作品3の説明テキスト" data-year="2021">
+            <img src="sum/2020_yakusoku.jpg" alt="作品3" data-caption="作品3の説明テキスト" data-year="2020">
+            <img src="sum/2020_ukou.jpg" alt="作品3" data-caption="作品3の説明テキスト" data-year="2020">
+            <img src="sum/2020_tachi.jpg" alt="作品3" data-caption="作品3の説明テキスト" data-year="2020">
+            <img src="sum/2020_joudo.jpg" alt="作品3" data-caption="作品3の説明テキスト" data-year="2020">
+            <img src="sum/2020_imagine.jpg" alt="作品3" data-caption="作品3の説明テキスト" data-year="2020">
+            <img src="sum/2019_lost-heart.jpg" alt="作品3" data-caption="作品3の説明テキスト" data-year="2019">
+            <img src="sum/2019_kosakura.jpg" alt="作品3" data-caption="作品3の説明テキスト" data-year="2019">
+            <img src="sum/2018_kokoro.jpg" alt="作品3" data-caption="作品3の説明テキスト" data-year="2018">
+            <img src="sum/2018-19_microcosmos.jpg" alt="作品3" data-caption="作品3の説明テキスト" data-year="2018">
+            <img src="sum/2016_Ho_O.jpg" alt="作品3" data-caption="作品3の説明テキスト" data-year="2016">
+            <img src="sum/2016_A_O.jpg" alt="作品3" data-caption="作品3の説明テキスト" data-year="2016">
+            <img src="sum/2015_Yo_O.jpg" alt="作品3" data-caption="作品3の説明テキスト" data-year="2015">
+            <img src="sum/2015_Mi_E.jpg" alt="作品3" data-caption="作品3の説明テキスト" data-year="2015">
+
 </div>
 
   </div>
@@ -243,7 +288,7 @@ a {
         viewerImg.src = img.src;
         viewerCaption.textContent = img.dataset.caption;
         viewer.classList.add('active');
-        document.querySelector('.sumnail').classList.add('active');
+        document.querySelector('.thumbnail').classList.add('active');
         document.querySelector('.gallery').classList.add('active');
         document.querySelector('.site-header').classList.add('active');
       });
@@ -251,10 +296,34 @@ a {
 
     closeBtn.addEventListener('click', () => {
       viewer.classList.remove('active');
-        document.querySelector('.sumnail').classList.remove('active');
+        document.querySelector('.thumbnail').classList.remove('active');
         document.querySelector('.gallery').classList.remove('active');
         document.querySelector('.site-header').classList.remove('active');
     });
+
+  document.addEventListener("DOMContentLoaded", () => {
+  document.querySelectorAll('.thumbnail').forEach((thumb) => {
+    thumb.addEventListener('click', () => {
+      // 既存のactiveを外す
+      document.querySelectorAll('.thumbnail').forEach(t => {
+        t.classList.remove('active');
+        let yearEl = t.querySelector('.year');
+        if (yearEl) yearEl.remove();
+      });
+
+      // 今クリックした要素にactive付与
+      thumb.classList.add('active');
+
+      // 年の要素を追加
+      const year = thumb.dataset.year;
+      const yearEl = document.createElement('span');
+      yearEl.classList.add('year');
+      yearEl.textContent = year;
+      thumb.appendChild(yearEl);
+    });
+  });
+});
+
 
 
 </script>
