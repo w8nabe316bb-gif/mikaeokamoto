@@ -55,6 +55,7 @@ table {
 
 td {
   padding: 0;
+  vertical-align: top;
 }
 
 td time {
@@ -95,7 +96,7 @@ td time {
 .site-header .logo img {
   display: block;
   margin: 0 0 -10px -5px;
-  max-width: 260px;
+  width: 260px;
   height: auto;
 }
 
@@ -194,7 +195,7 @@ section {
   width: 50%;
   height: 2rem;
   text-align: center;
-  border: 1px solid #222;
+  border: 0.8px solid #222;
 }
 
 /* リスト */
@@ -209,7 +210,7 @@ section {
 
 /* フッター */
 .site-footer {
-  text-align: center;
+  text-align: left;
   padding: 1rem;
   font-size: 0.85rem;
   color: #666;
@@ -234,12 +235,13 @@ section {
 }
 
 .portrait img {
-  margin-top: -85px;
+  margin-top: -22%;
   width: 100%;
 }
 
 .page {
-  margin: 50px;
+  margin: 50px auto;
+  padding: 0px 50px;
   max-width: 1080px;
 }
 
@@ -260,4 +262,29 @@ section {
   width: 24px;
   margin-right: 0.6rem;
   opacity: 0.2;
+}
+
+/* 781px以上（PC向け） */
+@media (min-width: 781px) {
+
+}
+
+/* 780px以下（スマホ向け） */
+@media (max-width: 780px) {
+    .main-nav {
+        display: none;
+    }
+
+  .site-header {
+  padding: 20px 20px 0px 20px;
+    width: calc(100% - 40px);
+}
+.page {
+  margin: 20px auto;
+  padding: 0px 20px;
+}
+
+.portrait {
+  margin-bottom: 50px;
+}
 }
