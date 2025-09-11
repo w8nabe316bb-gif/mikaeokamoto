@@ -278,12 +278,12 @@ section {
     }
 
   .site-header {
-  padding: 1.7% 1.7% 0px 1.7%;
-    width: calc(100% - 3.4%);
+  padding: 3.4% 3.4% 0px 3.4%;
+    width: calc(100% - 6.8%);
 }
 .page {
-  margin: 1.7% auto;
-  padding: 0px 1.7%;
+  margin: 3.4% auto;
+  padding: 0px 3.4%;
 }
 
 .portrait {
