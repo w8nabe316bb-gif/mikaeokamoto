@@ -3,8 +3,8 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Mikae Okamoto — Portfolio</title>
-  <meta name="description" content="岡本実佳枝 — 広島を拠点に活動する画家。光と色彩の重なりを主題にした油彩・混合技法の作品紹介。">
+  <title>岡本実佳枝 Mikae Okamoto ｜ 作品サイト</title>
+  <meta name="description" content="岡本実佳枝｜Mikae Okamoto — 広島を拠点に活動する画家。光と色彩の重なりを主題にしたテンペラと油彩の混合技法により描かれた作品を紹介。">
   <meta name="author" content="Mikae Okamoto">
   <meta name="format-detection" content="telephone=no">
 
@@ -101,6 +101,7 @@
         <tr><td></td><td>写実・<span class="latin">Premium</span>（岡山天満屋）</td></tr>
         <tr><td></td><td>愛しきものたち （東邦アート）</td></tr>
         <tr><td><time>2022</time></td><td>秋の美術逸品展<span class="latin">2022</span> （福山ニューキャッスルホテル）</td></tr>
+        <tr><td><time>2023</time></td><td>岡本実佳枝展-夢の中の群像-<span class="latin"></span>（東邦アート）</td></tr>
         <tr><td><time>2025</time></td><td><span class="latin">I LOVE CATS ! </span>（東邦アート）</td></tr>
         <tr><td></td><td>ポラリス（東邦アート）</td></tr>
         <tr><td></td><td>神戸アートマルシェ<span class="latin">2025</span></td></tr>
@@ -116,8 +117,37 @@
         <div class="contact">
           <div class="flex">
             <div class="flexbox">
-        <button onclick="openForm()"><img src="images/contact_1.svg" alt="お問い合わせ">お問い合わせ</button></div>
-          <div class="flexbox"><a href="https://www.instagram.com/mikae_okamoto" target="_blank" rel="noopener"><img src="images/Instagram.svg" alt="岡本実佳枝のインスタグラム">  岡本実佳枝インスタグラム</a></div>
+        <!-- お問い合わせボタン -->
+<button id="openModal" class="link"><img src="images/contact_2.svg" alt=お問い合わせ>お問い合わせはこちらから</button>
+
+<!-- モーダル本体 -->
+<div id="modal" class="modal">
+  <div class="modal-content">
+    <span id="closeModal" class="close">&times;</span>
+    <h2>お問い合わせフォーム</h2>
+    <form action="https://formspree.io/f/mandkqyj" method="POST">
+      <label>
+        お名前:
+        <input class="form_s" type="text" name="name" required>
+      </label>
+      <br>
+      <label>
+        メールアドレス:
+        <input type="email" name="email" required>
+      </label>
+      <br>
+      <label>
+        メッセージ:
+        <textarea name="message" required></textarea>
+      </label>
+      <br>
+      <button type="submit">送信</button>
+    </form>
+  </div>
+</div>
+</div>
+
+          <div class="flexbox"><a class="link" href="https://www.instagram.com/mikae_okamoto" target="_blank" rel="noopener"><img src="images/Instagram.svg" alt="岡本実佳枝のインスタグラム">  岡本実佳枝インスタグラム</a></div>
       </div></div>
     </section>
     </div>
@@ -129,12 +159,26 @@
   </footer>
 </body>
 <script>
-  function openForm() {
-    window.open(
-      'contactform.html',      // 開くページ
-      'contactWindow',     // ウィンドウ名
-      'width=600,height=700,scrollbars=yes,resizable=yes'
-    );
+  const modal = document.getElementById("modal");
+  const openBtn = document.getElementById("openModal");
+  const closeBtn = document.getElementById("closeModal");
+
+  // 開く
+  openBtn.onclick = function() {
+    modal.style.display = "block";
+  }
+
+  // 閉じる
+  closeBtn.onclick = function() {
+    modal.style.display = "none";
+  }
+
+  // 背景をクリックしたら閉じる
+  window.onclick = function(event) {
+    if (event.target === modal) {
+      modal.style.display = "none";
+    }
   }
 </script>
+
 </html>
