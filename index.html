@@ -116,7 +116,7 @@
         <div class="contact">
           <div class="flex">
             <div class="flexbox">
-        <a href="mailto:info@example.com"><img src="images/contact_1.svg" alt="お問い合わせ">  お問い合わせフォーム（準備中）</a></div>
+        <button onclick="openForm()"><img src="images/contact_1.svg" alt="お問い合わせ">お問い合わせ</button></div>
           <div class="flexbox"><a href="https://www.instagram.com/mikae_okamoto" target="_blank" rel="noopener"><img src="images/Instagram.svg" alt="岡本実佳枝のインスタグラム">  岡本実佳枝インスタグラム</a></div>
       </div></div>
     </section>
@@ -128,4 +128,13 @@
     <small>&copy; 2025 Mikae Okamoto</small>
   </footer>
 </body>
+<script>
+  function openForm() {
+    window.open(
+      'contactform.html',      // 開くページ
+      'contactWindow',     // ウィンドウ名
+      'width=600,height=700,scrollbars=yes,resizable=yes'
+    );
+  }
+</script>
 </html>
