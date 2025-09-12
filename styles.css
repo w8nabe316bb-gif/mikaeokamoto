@@ -303,9 +303,18 @@ section {
 
 .form_s {
   width: 100%;
-  margin-top: 5px;
-  margin-bottom: 15px;
-  border-bottom: 1px solid #222;
+  padding: 8px 4px;
+  border: none;                  /* 枠線を消す */
+  border-bottom: 1px solid #222; /* 下線だけ残す */
+  background: transparent;       /* 背景色なし */
+  font-size: 16px;
+  outline: none;                 /* フォーカス時の青枠を消す */
+  box-sizing: border-box;
+}
+
+/* フォーカスしたときに下線を強調 */
+.form_s:focus {
+  border-bottom: 2px solid #000; /* 下線を太く/濃く */
 }
 
 /* 閉じるボタン */
