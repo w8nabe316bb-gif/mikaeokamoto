@@ -132,6 +132,7 @@ td time {
 /* セクション */
 section {
   padding: 150px 0px 0px 0px;
+  min-height: 200px;
 }
 
 .main {
@@ -224,8 +225,9 @@ section {
 
 /* フッター */
 .site-footer {
+  height: auto;
   text-align: left;
-  padding: 1rem;
+  padding-bottom: 20px;
   font-size: 0.85rem;
   color: #666;
 }
@@ -254,7 +256,7 @@ section {
 }
 
 .page {
-  margin: 50px auto;
+  margin: 50px auto 0px auto;
   padding: 0px 50px;
   max-width: 1080px;
 }
