@@ -50,7 +50,7 @@
 
 .main-nav {
   position: absolute;
-  width: 100%;
+  width: auto;
   padding: 0;
   text-align: left;
 }
@@ -164,6 +164,31 @@ a {
   margin-top: 4px;
 }
 
+.filter-btn {
+  float: right;
+  padding: 0;
+  border: none;
+  cursor: pointer;
+  font-size: 14px;
+  line-height: 28px;
+  font-family: 'Cormorant Garamond', 'Yu Mincho', '游明朝', 'Hiragino Mincho ProN', 'Noto Serif JP', serif;
+  font-variant-numeric: lining-nums tabular-nums;
+  font-feature-settings: "lnum", "tnum", "palt";
+  font-weight: 100;
+  letter-spacing: 0.04em;
+  color: #b4b4b4;
+  background-color: transparent;
+  transition: color 0.3s;
+  z-index: 1000;}
+
+.filter-btn:hover {
+    color: rgb(16, 196, 139);
+}
+
+.hidden {
+  display: none;
+}
+
 /* 781px以上（PC向け） */
 @media (min-width: 781px) {
   .thumbnail {
@@ -226,47 +251,48 @@ a {
       <a class="link" href="index.html#profile">PROFILE</a>
       <a class="link" href="index.html#contact">CONTACT</a>
     </nav>
+    <button class="filter-btn" id="filterBtn">全て</button>
      </div>
     </div>
   </header>
 
   <div class="gallery">
     <div class="thumbnail">
-            <img src="sum/2025_yumon.jpg" alt="憂悶" data-caption="憂悶" data-year="2025">
-            <img src="sum/2025_shiragiku.jpg" alt="白菊" data-caption="白菊" data-year="2025">
-            <img src="sum/2025_2bunno3.jpg" alt="2分の3" data-caption="2分の3" data-year="2025">
-            <img src="sum/2024_Untitled.jpg" alt="Untitled" data-caption="Untitled" data-year="2024">
-            <img src="sum/2024_mudai.jpg" alt="Untitled" data-caption="Untitled" data-year="2024">
-            <img src="sum/2024_electricity.jpg" alt="electricity" data-caption="electricity" data-year="2024">
-            <img src="sum/2024_coronbus.jpg" alt="コロンブスの卵" data-caption="コロンブスの卵" data-year="2024">
-            <img src="sum/2023_shuen.jpg" alt="終焉の結び" data-caption="終焉の結び" data-year="2023">
-            <img src="sum/2023_omamori.jpg" alt="お護り" data-caption="お護り" data-year="2023">
-            <img src="sum/2023_maigo.jpg" alt="迷子のミツバチ" data-caption="迷子のミツバチ" data-year="2023">
-            <img src="sum/2023_LOVE.jpg" alt="L.O.V.E" data-caption="L.O.V.E" data-year="2023">
-            <img src="sum/2023_ichigo.jpg" alt="いちごの髪飾り" data-caption="いちごの髪飾り" data-year="2023">
-            <img src="sum/2023_Group.jpg" alt="Group image" data-caption="Group image" data-year="2023">
-            <img src="sum/2023_Group-image.jpg" alt="Group image" data-caption="Group image" data-year="2023">
-            <img src="sum/2022_shinennotomoshibi.jpg" alt="深閑の灯火" data-caption="深閑の灯火" data-year="2022">
-            <img src="sum/2022_issui.jpg" alt="一炊の夢" data-caption="一炊の夢" data-year="2022">
-            <img src="sum/2022_ifu.jpg" alt="威風" data-caption="威風" data-year="2022">
-            <img src="sum/2022_hanamoyuru.jpg" alt="花燃ゆる刻" data-caption="花燃ゆる刻" data-year="2022">
-            <img src="sum/2021_yumihari.jpg" alt="弓張月" data-caption="弓張月" data-year="2021">
-            <img src="sum/2021_shinoku.jpg" alt="深奥" data-caption="深奥" data-year="2021">
-            <img src="sum/2021_oboroge.jpg" alt="朧気" data-caption="朧気" data-year="2021">
-            <img src="sum/2021_bizu.jpg" alt="ビーズの首飾りの少女" data-caption="ビーズの首飾りの少女" data-year="2021">
-            <img src="sum/2020_yakusoku.jpg" alt="約束" data-caption="約束" data-year="2020">
-            <img src="sum/2020_ukou.jpg" alt="鬱勃" data-caption="鬱勃" data-year="2020">
-            <img src="sum/2020_tachi.jpg" alt="立" data-caption="立" data-year="2020">
-            <img src="sum/2020_joudo.jpg" alt="情動の表出" data-caption="情動の表出" data-year="2020">
-            <img src="sum/2020_imagine.jpg" alt="imagine" data-caption="imagine" data-year="2020">
-            <img src="sum/2019_lost-heart.jpg" alt="lost heart" data-caption="lost heart" data-year="2019">
-            <img src="sum/2019_kosakura.jpg" alt="子桜" data-caption="子桜" data-year="2019">
-            <img src="sum/2018_kokoro.jpg" alt="こころ" data-caption="こころ" data-year="2018">
-            <img src="sum/2018-19_microcosmos.jpg" alt="microcosmos" data-caption="microcosmos" data-year="2018">
-            <img src="sum/2016_Ho_O.jpg" alt="翻弄される小さな命" data-caption="翻弄される小さな命" data-year="2016">
-            <img src="sum/2016_A_O.jpg" alt="鯉 –アグレッシブ・フィッシュズ–" data-caption="鯉 –アグレッシブ・フィッシュズ–" data-year="2016">
-            <img src="sum/2015_Yo_O.jpg" alt="踊花" data-caption="踊花" data-year="2015">
-            <img src="sum/2015_Mi_E.jpg" alt="見方がかわれば" data-caption="見方がかわれば" data-year="2015">
+            <div class="item" data-tag="人物"><img src="sum/2025_yumon.jpg" alt="憂悶" data-caption="憂悶" data-year="2025"></div>
+            <div class="item" data-tag="人物"><img src="sum/2025_shiragiku.jpg" alt="白菊" data-caption="白菊" data-year="2025"></div>
+            <div class="item" data-tag="人物"><img src="sum/2025_2bunno3.jpg" alt="2分の3" data-caption="2分の3" data-year="2025"></div>
+            <div class="item" data-tag="人物"><img src="sum/2024_Untitled.jpg" alt="Untitled" data-caption="Untitled" data-year="2024"></div>
+            <div class="item" data-tag="人物"><img src="sum/2024_mudai.jpg" alt="Untitled" data-caption="Untitled" data-year="2024"></div>
+            <div class="item" data-tag="人物"><img src="sum/2024_electricity.jpg" alt="electricity" data-caption="electricity" data-year="2024"></div>
+            <div class="item" data-tag="フジツボ"><img src="sum/2024_coronbus.jpg" alt="コロンブスの卵" data-caption="コロンブスの卵" data-year="2024"></div>
+            <div class="item" data-tag="フジツボ"><img src="sum/2023_shuen.jpg" alt="終焉の結び" data-caption="終焉の結び" data-year="2023"></div>
+            <div class="item" data-tag="その他"><img src="sum/2023_omamori.jpg" alt="お護り" data-caption="お護り" data-year="2023"></div>
+            <div class="item" data-tag="フジツボ"><img src="sum/2023_maigo.jpg" alt="迷子のミツバチ" data-caption="迷子のミツバチ" data-year="2023"></div>
+            <div class="item" data-tag="フジツボ"><img src="sum/2023_LOVE.jpg" alt="L.O.V.E" data-caption="L.O.V.E" data-year="2023"></div>
+            <div class="item" data-tag="人物"><img src="sum/2023_ichigo.jpg" alt="いちごの髪飾り" data-caption="いちごの髪飾り" data-year="2023"></div>
+            <div class="item" data-tag="フジツボ"><img src="sum/2023_Group.jpg" alt="Group image" data-caption="Group image" data-year="2023"></div>
+            <div class="item" data-tag="フジツボ"><img src="sum/2023_Group-image.jpg" alt="Group image" data-caption="Group image" data-year="2023"></div>
+            <div class="item" data-tag="フジツボ"><img src="sum/2022_shinennotomoshibi.jpg" alt="深閑の灯火" data-caption="深閑の灯火" data-year="2022"></div>
+            <div class="item" data-tag="猫"><img src="sum/2022_issui.jpg" alt="一炊の夢" data-caption="一炊の夢" data-year="2022"></div>
+            <div class="item" data-tag="猫"><img src="sum/2022_ifu.jpg" alt="威風" data-caption="威風" data-year="2022"></div>
+            <div class="item" data-tag="フジツボ"><img src="sum/2022_hanamoyuru.jpg" alt="花燃ゆる刻" data-caption="花燃ゆる刻" data-year="2022"></div>
+            <div class="item" data-tag="猫"><img src="sum/2021_yumihari.jpg" alt="弓張月" data-caption="弓張月" data-year="2021"></div>
+            <div class="item" data-tag="フジツボ"><img src="sum/2021_shinoku.jpg" alt="深奥" data-caption="深奥" data-year="2021"></div>
+            <div class="item" data-tag="猫"><img src="sum/2021_oboroge.jpg" alt="朧気" data-caption="朧気" data-year="2021"></div>
+            <div class="item" data-tag="猫"><img src="sum/2021_bizu.jpg" alt="ビーズの首飾りの少女" data-caption="ビーズの首飾りの少女" data-year="2021"></div>
+            <div class="item" data-tag="その他"><img src="sum/2020_yakusoku.jpg" alt="約束" data-caption="約束" data-year="2020"></div>
+            <div class="item" data-tag="フジツボ"><img src="sum/2020_ukou.jpg" alt="鬱勃" data-caption="鬱勃" data-year="2020"></div>
+            <div class="item" data-tag="その他"><img src="sum/2020_tachi.jpg" alt="立" data-caption="立" data-year="2020"></div>
+            <div class="item" data-tag="その他"><img src="sum/2020_joudo.jpg" alt="情動の表出" data-caption="情動の表出" data-year="2020"></div>
+            <div class="item" data-tag="その他"><img src="sum/2020_imagine.jpg" alt="imagine" data-caption="imagine" data-year="2020"></div>
+            <div class="item" data-tag="猫"><img src="sum/2019_lost-heart.jpg" alt="lost heart" data-caption="lost heart" data-year="2019"></div>
+            <div class="item" data-tag="その他"><img src="sum/2019_kosakura.jpg" alt="子桜" data-caption="子桜" data-year="2019"></div>
+            <div class="item" data-tag="フジツボ"><img src="sum/2018_kokoro.jpg" alt="こころ" data-caption="こころ" data-year="2018"></div>
+            <div class="item" data-tag="その他"><img src="sum/2018-19_microcosmos.jpg" alt="microcosmos" data-caption="microcosmos" data-year="2018"></div>
+            <div class="item" data-tag="その他"><img src="sum/2016_Ho_O.jpg" alt="翻弄される小さな命" data-caption="翻弄される小さな命" data-year="2016"></div>
+            <div class="item" data-tag="その他"><img src="sum/2016_A_O.jpg" alt="鯉 –アグレッシブ・フィッシュズ–" data-caption="鯉 –アグレッシブ・フィッシュズ–" data-year="2016"></div>
+            <div class="item" data-tag="その他"><img src="sum/2015_Yo_O.jpg" alt="踊花" data-caption="踊花" data-year="2015"></div>
+            <div class="item" data-tag="その他"><img src="sum/2015_Mi_E.jpg" alt="見方がかわれば" data-caption="見方がかわれば" data-year="2015" data-tag="その他"></div>
 
 </div>
 
@@ -329,6 +355,33 @@ a {
     });
   });
 });
+
+const filterBtn = document.getElementById("filterBtn");
+const items = document.querySelectorAll(".item");
+
+// フィルターの順番を定義
+const filters = ["全て", "人物", "フジツボ", "猫", "その他"];
+let currentIndex = 0;
+
+filterBtn.addEventListener("click", () => {
+  // 次のフィルタに進める
+  currentIndex = (currentIndex + 1) % filters.length;
+  const filter = filters[currentIndex];
+
+  // ボタンのラベルを変更
+  filterBtn.textContent = filter;
+
+  // 表示切替
+  items.forEach(item => {
+    if (filter === "全て" || item.dataset.tag === filter) {
+      item.classList.remove("hidden");
+    } else {
+      item.classList.add("hidden");
+    }
+  });
+});
+
+
 
 </script>
 
