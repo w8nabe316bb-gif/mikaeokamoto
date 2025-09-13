@@ -260,7 +260,7 @@ section {
 }
 
 .link{
-  transition: color 0.2s ease, border-color 0.2s ease; /* なめらかに変化 */
+  transition: color 0.2s ease, border-color 0.2s ease; 
 }
 
 .link:hover {
