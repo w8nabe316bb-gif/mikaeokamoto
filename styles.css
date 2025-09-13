@@ -259,6 +259,10 @@ section {
   max-width: 1080px;
 }
 
+.link{
+  transition: color 0.2s ease, border-color 0.2s ease; /* なめらかに変化 */
+}
+
 .link:hover {
   color: rgb(16, 196, 139);
 }
@@ -292,35 +296,67 @@ section {
 
 /* モーダル内のボックス */
 .modal-content {
+  position: relative;
   background: #efedec;
   margin: 10% auto;
   padding: 20px;
   border-radius: 8px;
   width: 90%;
   max-width: 600px;
+  height: 480px;
   box-shadow: 0 4px 10px rgba(0,0,0,0.3);
 }
 
-.form_s {
+.form_s, .form_l {
+  font-family: 'Cormorant Garamond', 'Yu Mincho', '游明朝', 'Hiragino Mincho ProN', 'Noto Serif JP', serif;
+  font-variant-numeric: lining-nums tabular-nums;
+  font-feature-settings: "lnum", "tnum", "palt";
+  font-weight: 100;
+  margin-bottom: 14px;
   width: 100%;
-  padding: 8px 4px;
+  padding: 8px 0px;
   border: none;                  /* 枠線を消す */
-  border-bottom: 1px solid #222; /* 下線だけ残す */
+  border-bottom: 0.6px solid #222; /* 下線だけ残す */
   background: transparent;       /* 背景色なし */
   font-size: 16px;
   outline: none;                 /* フォーカス時の青枠を消す */
   box-sizing: border-box;
 }
 
+.form_l{
+  height: 128px;
+}
+
+.form_s::placeholder, .form_l::placeholder {
+  font-family: 'Cormorant Garamond', 'Yu Mincho', '游明朝', 'Hiragino Mincho ProN', 'Noto Serif JP', serif;
+  font-variant-numeric: lining-nums tabular-nums;
+  font-feature-settings: "lnum", "tnum", "palt";
+  font-weight: 100;
+  color: #c7c7c7;        /* 薄いグレーで表示 */
+  font-size: 14px;    /* 少し小さめ */
+  transition: color 0.2s ease; /* なめらかに変化 */
+}
+
 /* フォーカスしたときに下線を強調 */
-.form_s:focus {
-  border-bottom: 2px solid #000; /* 下線を太く/濃く */
+.form_s:focus, .form_l:focus {
+  border-bottom: 1px solid rgb(16, 196, 139);
+}
+
+.form_s:focus::placeholder {
+  color: transparent; /* フォーカス時に透明にする */
 }
 
 /* 閉じるボタン */
 .close {
   float: right;
-  font-size: 40px;
+  font-size: 60px;
+  cursor: pointer;
+}
+
+.send {
+  position: absolute;
+  bottom: 0; 
+  right: 0;
   cursor: pointer;
 }
 

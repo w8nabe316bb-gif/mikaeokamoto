@@ -118,7 +118,7 @@
           <div class="flex">
             <div class="flexbox">
         <!-- お問い合わせボタン -->
-<button id="openModal" class="link"><img src="images/contact_2.svg" alt=お問い合わせ>お問い合わせはこちらから</button>
+<button id="openModal" class="link"><img src="images/contact_1.svg" alt=お問い合わせ>お問い合わせはこちらから</button>
 
 <!-- モーダル本体 -->
 <div id="modal" class="modal">
@@ -127,21 +127,21 @@
     <h2>お問い合わせフォーム</h2>
     <form action="https://formspree.io/f/mandkqyj" method="POST">
       <label>
-        お名前:
-        <input class="form_s" type="text" name="name" required>
+        NAME
+        <input class="form_s" type="text" name="name" placeholder="お名前を入力してください" required>
       </label>
       <br>
       <label>
-        メールアドレス:
-        <input class="form_s" type="email" name="email" required>
+        MAIL
+        <input class="form_s" type="email" name="email" placeholder="メールアドレスを入力してください" required>
       </label>
       <br>
       <label>
-        メッセージ:
-        <textarea name="message" required></textarea>
+        MESSAGE
+        <textarea class="form_l" name="message" placeholder="ご用件を入力してください" required></textarea>
       </label>
       <br>
-      <button type="submit">送信</button>
+      <button class="send" type="submit">送信<img src="images/contact_2.svg"></button>
     </form>
   </div>
 </div>
@@ -155,7 +155,8 @@
   </div>
 
   <footer class="site-footer">
-    <small>&copy; 2025 Mikae Okamoto</small>
+    <small>&copy;2025©Mikae Okamoto All Right Reserved.
+</small>
   </footer>
 </body>
 <script>
