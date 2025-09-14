@@ -4,10 +4,17 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>作品ページ｜岡本実佳枝 Mikae Okamoto</title>
-  
 
 
-    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500&display=swap" rel="stylesheet">
+
+   <!-- フォントのドメインに事前接続 -->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+<!-- 遅延読み込み -->
+<link rel="preload" href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500&display=swap" as="style" onload="this.onload=null;this.rel='stylesheet'">
+<noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500&display=swap"></noscript>
+
 
   <style>
     html {
@@ -18,6 +25,7 @@
   font-feature-settings: "lnum", "tnum", "palt";
   font-weight: 100;
   letter-spacing: 0.04em;
+  font-display: swap;
   color: #222;
   background: #efedec;
   vertical-align: top;

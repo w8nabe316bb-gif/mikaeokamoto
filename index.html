@@ -13,10 +13,18 @@
 
 
   <!-- Font -->
-  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500&display=swap" rel="stylesheet">
+  <!-- フォントのドメインに事前接続 -->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 
-  <!-- Main stylesheet -->
-  <link rel="stylesheet" href="styles.css">
+<!-- 遅延読み込み -->
+<link rel="preload" href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500&display=swap" as="style" onload="this.onload=null;this.rel='stylesheet'">
+<noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500&display=swap"></noscript>
+
+
+<link rel="preload" href="style.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+<noscript><link rel="stylesheet" href="style.css"></noscript>
+
 </head>
 
 <body>
@@ -53,9 +61,9 @@
 
     <section class="works">
       <div class="slide">
-      <figure><img src="images/2023_ichigo.jpg" srcset="images/2023_ichigo.jpg 1x, images/2023_ichigo_2x.jpg 2x" alt="いちごの髪飾り｜2024" ></figure>
-      <figure><img src="work/2021_yumihari.jpg" srcset="images/2021_yumihari.jpg 1x, images/2021_yumihari_2x.jpg 2x" alt="弓張月｜2024" loading="lazy"></figure>
-      <figure><img src="work/2020_ukou.jpg" srcset="images/2020_ukou.jpg 1x, images/2020_ukou_2x.jpg 2x" alt="鬱勃｜2020" loading="lazy"></figure>
+      <figure><img src="images/2023_ichigo.jpg" srcset="images/2023_ichigo.jpg 600w, images/2023_ichigo_2x.jpg 1200w" sizes="(max-width: 600px) 100vw, 1200px" alt="いちごの髪飾り｜2024" ></figure>
+      <figure><img src="work/2021_yumihari.jpg" srcset="images/2021_yumihari.jpg 600w, images/2021_yumihari_2x.jpg 1200w" sizes="(max-width: 600px) 100vw, 1200px" alt="弓張月｜2024" loading="lazy"></figure>
+      <figure><img src="work/2020_ukou.jpg" srcset="images/2020_ukou.jpg 600w, images/2020_ukou_2x.jpg 1200w" sizes="(max-width: 600px) 100vw, 1200px" alt="鬱勃｜2020" loading="lazy"></figure>
     </div>
     <div class="caption-box">
   <p class="caption">いちごの髪飾り｜2024</p>
