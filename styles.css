@@ -409,6 +409,7 @@ section {
   overflow: hidden;
   transition: border-color 0.3s ease;
   color: #000; /* 矢印の基準色（黒） */
+  flex-shrink: 0; /* ← SVG が縮小・拡大されないように */
 }
 
 .circle::before {
@@ -433,6 +434,7 @@ section {
   fill: none;
   z-index: 1;  /* ← 矢印が必ず前面に出る */
   transition: stroke 0.3s ease;
+  display: inline-block; /* transform のために必要 */
 }
 
 .view-all-btn:hover .circle {
