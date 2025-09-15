@@ -51,15 +51,12 @@
   <main>
     <div class="main">
     <section class="intro">
-         <div class="flex">
-           <div class="flexbox"></div>
-   <div class="flexbox">
+         <div class="intro_box">
+           </div>
+    <div class="intro_box">
       <p class="lead"></p>
     </div>
-    </div>
-    </section>
 
-    <section class="works">
       <div class="slide">
       <figure><img src="images/2023_ichigo.jpg" srcset="images/2023_ichigo.jpg 600w, images/2023_ichigo_2x.jpg 1200w" sizes="(max-width: 600px) 100vw, 1200px" alt="いちごの髪飾り｜2024" ></figure>
       <figure><img src="work/2021_yumihari.jpg" srcset="images/2021_yumihari.jpg 600w, images/2021_yumihari_2x.jpg 1200w" sizes="(max-width: 600px) 100vw, 1200px" alt="弓張月｜2024" loading="lazy"></figure>
@@ -69,10 +66,20 @@
   <p class="caption">いちごの髪飾り｜2024</p>
   <p class="caption">弓張月｜2024</p>
   <p class="caption">鬱勃｜2020</p>
-
-
-    <a class="link_work" href="work.html">作品ページはこちら</a>
   </div>  
+
+  <div class="view-all-container">
+  <a href="/work.html" class="view-all-btn">
+    <span>VIEW ALL</span>
+    <span class="circle">
+      <svg class="arrow" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 40 10">
+        <line x1="0" y1="5" x2="30" y2="5" stroke="currentColor" stroke-width="1" />
+        <polyline points="30,0 40,5 30,10" fill="none" stroke="currentColor" stroke-width="1" />
+      </svg>
+    </span>
+  </a>
+</div>
+
   </section>
 
     <section id="news" class="news">
@@ -87,6 +94,18 @@
     <td>東邦アートにて<time class="latin" datetime="2025-12-05">2025.12.05-20</time>の期間で個展を開催いたします</td>
   </tr>
 </table>
+<div class="view-all-container">
+  <a href="/archive.html" class="view-all-btn">
+    <span>VIEW ALL</span>
+    <span class="circle">
+      <svg class="arrow" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 40 10">
+        <line x1="0" y1="5" x2="30" y2="5" stroke="currentColor" stroke-width="1" />
+        <polyline points="30,0 40,5 30,10" fill="none" stroke="currentColor" stroke-width="1" />
+      </svg>
+    </span>
+  </a>
+</div>
+
 
     </section>
 
@@ -130,7 +149,7 @@
           <div class="flex">
             <div class="flexbox">
         <!-- お問い合わせボタン -->
-<button id="openModal" class="link"><img src="images/contact_1.svg" alt=お問い合わせ>お問い合わせはこちらから</button>
+<button class="link" id="openModal"><img src="images/contact_1.svg" alt=お問い合わせ>お問い合わせはこちらから</button>
 
 <!-- モーダル本体 -->
 <div id="modal" class="modal">
@@ -153,6 +172,8 @@
         <textarea class="form_l" name="message" placeholder="ご用件を入力してください" required></textarea>
       </label>
       <br>
+      <small>送信フォームはFormspreeを利用しています。<br>個人情報の取り扱いについては<a href="privacy.html" target="_blank" rel="noopener">プライバシーポリシー</a>をご覧ください。</small>
+      <br><br>
       <button class="send" type="submit">送信<img src="images/contact_2.svg"></button>
     </form>
   </div>
@@ -165,8 +186,7 @@
     </div>
   </main>
   <footer class="site-footer">
-    <small>&copy;2025 Mikae Okamoto
-</small>
+    <small>&copy;2025 Mikae Okamoto</small><a href="/privacy.html">プライバシーポリシー</a>
   </footer>
   </div>
 

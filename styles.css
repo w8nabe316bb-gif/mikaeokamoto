@@ -34,6 +34,14 @@ a {
   color: #222;
 }
 
+.link{
+  transition: color 0.2s ease, border-color 0.2s ease; 
+}
+
+.link:hover {
+  color: rgb(16, 196, 139);
+}
+
 p {
   font-size: 14px;
   line-height: 28px;
@@ -66,7 +74,7 @@ table {
 }
 
 td {
-  height: 34px;
+  height: 30px;
   padding: 0;
   vertical-align: top;
 }
@@ -132,7 +140,8 @@ td time {
 
 /* セクション */
 section {
-  padding: 150px 0px 0px 0px;
+  padding: 0px;
+  margin-top: 150px;
   min-height: 200px;
 }
 
@@ -223,22 +232,37 @@ section {
 /* フッター */
 .site-footer {
   height: auto;
+  display: flex;           /* 横並びにする */
+  justify-content: space-between; /* 左右に要素を振り分ける */
+  align-items: center;   
   text-align: left;
   padding-bottom: 20px;
   font-size: 0.85rem;
   color: #666;
 }
 
+.site-footer a{
+  float: right;
+  text-align: right;
+  font-size: 0.7rem ;
+  color: #666;
+  transition: color 0.2s ease, border-color 0.2s ease; 
+}
+
+.site-footer a:hover {
+  color: rgb(16, 196, 139);
+}
+
 /* レイアウト */
 .flex {
   display: flex;
   flex-wrap: wrap;
-  gap: 20px;
+  gap: 40px;
   width: 100%;
 }
 
 .flexbox {
-  width: calc(50% - 10px);
+  width: calc(50% - 20px);
   height: auto;
 }
 
@@ -258,12 +282,8 @@ section {
   max-width: 1080px;
 }
 
-.link{
-  transition: color 0.2s ease, border-color 0.2s ease; 
-}
-
-.link:hover {
-  color: rgb(16, 196, 139);
+.intro{
+  margin-top: 50vh;
 }
 
 .contact{
@@ -302,7 +322,7 @@ section {
   border-radius: 8px;
   width: 90%;
   max-width: 600px;
-  height: 480px;
+  height: 490px;
   box-shadow: 0 4px 10px rgba(0,0,0,0.3);
 }
 
@@ -358,6 +378,84 @@ section {
   right: 0;
   cursor: pointer;
 }
+
+.view-all-container {
+  display: flex;
+  justify-content: flex-end; /* 右端に寄せる */
+  margin-top: 0px;
+}
+
+.view-all-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 15px;
+  text-decoration: none;
+  font-weight: 100;
+  color: #333;
+  font-size: 1.1rem;
+  transition: color 0.3s ease;
+  position: relative;
+}
+
+.circle {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 40px;
+  height: 40px;
+  border: 0.8px solid currentColor;
+  border-radius: 50%;
+  position: relative;
+  overflow: hidden;
+  transition: border-color 0.3s ease;
+  color: #000; /* 矢印の基準色（黒） */
+}
+
+.circle::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: #000;
+  border-radius: 50%;
+  transform: scale(0);
+  transform-origin: center;
+  transition: transform 0.6s cubic-bezier(0.25, 1, 0.5, 1),
+              opacity 0.6s ease;
+  z-index: 0;
+  opacity: 0;
+}
+
+.arrow {
+  width: 20px;
+  height: 10px;
+  stroke: currentColor;
+  stroke-width: 1;
+  fill: none;
+  z-index: 1;  /* ← 矢印が必ず前面に出る */
+  transition: stroke 0.3s ease;
+}
+
+.view-all-btn:hover .circle {
+  border-color: transparent;
+  color: #fff; /* ← これで矢印が白に変わる */
+}
+
+.view-all-btn:hover .circle::before {
+  transform: scale(1);
+  opacity: 1;
+}
+
+@keyframes arrow-move {
+  0%   { transform: translateX(-1.2px); }
+  50%  { transform: translateX(1.2px); }
+  100% { transform: translateX(-1.2px); }
+}
+
+.view-all-btn:hover .arrow {
+  animation: arrow-move 1s ease-in-out infinite;
+}
+
+
 
 
 /* 781px以上（PC向け） */

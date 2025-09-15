@@ -1,0 +1,338 @@
+<!doctype html>
+<html lang="ja">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>プライバシーポリシー｜岡本実佳枝 Mikae Okamoto</title>
+  <meta name="author" content="Mikae Okamoto（岡本実佳枝）">
+  <meta name="format-detection" content="telephone=no">
+  <link rel="icon" href="/favicon.png" type="image/x-icon">
+  <link rel="apple-touch-icon" href="favicon.png">
+
+
+  <!-- Font -->
+  <!-- フォントのドメインに事前接続 -->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+<!-- 遅延読み込み -->
+<link rel="preload" href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500&display=swap" as="style" onload="this.onload=null;this.rel='stylesheet'">
+<noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500&display=swap"></noscript>
+
+
+<link rel="preload" href="styles.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+<noscript><link rel="stylesheet" href="styles.css"></noscript>
+
+<style>
+.news-list {
+      margin-top: 80px;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 40px;
+    }
+
+    .news-item {
+      display: flex;
+      justify-content: space-between;
+      align-items: stretch;
+      overflow: hidden;
+      min-width: 400px;
+      flex: 1 1 calc(50% - 40px); /* 横に2つ並ぶ */
+      max-width: 600px;
+      height: 200px;
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+
+    .news-item:hover {
+      transform: scale(1.02);
+    }
+
+    .news-text {
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+      justify-content: top;
+      padding-right: 1.5rem;
+    }
+
+    .news-text h2 {
+      font-size: 18px;
+      margin: 0 0 10px;
+    }
+
+    .news-text p {
+      font-size: 14px;
+      line-height: 1.6rem;
+      color: #555;
+      margin: 0;
+    }
+
+    .news-image {
+      flex: 0 0 40%;
+      background-size: cover;
+      background-position: center;
+      cursor: pointer;
+    }
+
+.modal {
+  display: flex; /* flexで中央揃え */
+  position: fixed;
+  inset: 0;
+  background: rgba(0,0,0,0.5);
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.4s ease;
+  padding: 0;
+}
+
+.modal.active {
+  opacity: 1;
+  pointer-events: auto;
+}
+
+.modal-content {
+  max-width: 90%;
+  max-height: 90%;
+  text-align: center;
+  margin: auto;
+  padding: 0;
+  background: transparent;
+}
+
+.modal-content img {
+  object-fit: cover;
+  transform: scale(0.95);
+  transition: transform 0.4s ease;
+}
+
+.modal.active .modal-content img {
+  transform: scale(1); /* 開いた時に少し拡大する */
+}
+
+.modal-close {
+  position: absolute;
+  top: 20px;
+  right: 30px;
+  color: #fff;
+  font-size: 2rem;
+  cursor: pointer;
+  transition: opacity 0.3s ease;
+}
+
+.modal-close:hover {
+  opacity: 0.7;
+}
+
+
+    /* レスポンシブ: 画面が小さくなったら1段 */
+    @media (max-width: 500px) {
+      .news-item {
+        flex: 1 1 100%;
+        flex-direction: column;
+        height: auto;
+      }
+
+      .news-image {
+        height: 180px;
+      }
+    }
+  </style>
+
+</head>
+
+<body>
+  <header>
+    <div class="site-header">
+   <div class="flex">
+   <div class="flexbox">
+    <a href="#" class="logo">
+      <img src="images/titlelogo.svg" alt="Mikae Okamoto">
+      <p>Oil Paintings</p>
+    </a>
+     </div>
+  <div class="flexbox">
+    <nav class="main-nav">
+      <a class="link" href="work.html">WORKS</a>
+      <a class="link" href="#news">NEWS</a>
+      <a class="link" href="#profile">PROFILE</a>
+      <a class="link" href="#contact">CONTACT</a>
+    </nav>
+     </div>
+    </div>
+  </header>
+
+<div class="page">
+      <main>
+
+  <h1>ニュース一覧</h1>
+
+  <div class="news-list">
+    <div class="news-item">
+      <div class="news-text">
+        <h2>第<span class="latin">8</span>回宮本三郎記念デッサン大賞展にて大賞を受賞しました</h2>
+        <p>この記事の概要が入ります。簡単な説明文を2〜3行で。</p>
+      </div>
+      <div class="news-image" 
+           data-image="news/250908.jpg" 
+           style="background-image: url('news/250908.jpg');"></div>
+    </div>
+
+    <div class="news-item">
+      <div class="news-text">
+        <h2>記事タイトル2</h2>
+        <p>こちらも概要文です。ニュースのポイントをまとめます。</p>
+      </div>
+      <div class="news-image" 
+           data-image="sample2-large.jpg" 
+           style="background-image: url('sample2.jpg');"></div>
+    </div>
+
+    <div class="news-item">
+      <div class="news-text">
+        <h2>岡本実佳枝展 〜夢のなかの群像〜</h2>
+        <p>会期：<span class="latin">2023</span>年4月7日（金）→15日（土）<br>
+        会場：東邦アート</p>
+      </div>
+      <div class="news-image" 
+           data-image="sample2-large.jpg" 
+           style="background-image: url('sample2.jpg');"></div>
+    </div>
+
+    <div class="news-item">
+      <div class="news-text">
+        <h2>秋の美術逸品展2022</h2>
+        <p>会期：2022年11月27日（日）<br>
+        会場：福山ニューキャッスルホテル3階光耀の間</p>
+      </div>
+      <div class="news-image" 
+           data-image="sample2-large.jpg" 
+           style="background-image: url('sample2.jpg');"></div>
+    </div>
+
+    <div class="news-item">
+      <div class="news-text">
+        <h2>さまざまな写実世界展</h2>
+        <p>会期：2021年10月13日（水）→19日（火）<br>
+        会場：岐阜タカシマヤ 8階美術画廊</p>
+      </div>
+      <div class="news-image" 
+           data-image="sample2-large.jpg" 
+           style="background-image: url('sample2.jpg');"></div>
+    </div>
+
+    <div class="news-item">
+      <div class="news-text">
+        <h2>愛しきものたち〜Cats〜</h2>
+        <p>会期：2021年7月1日（木）→30日（金）<br>
+        会場：東邦アート</p>
+      </div>
+      <div class="news-image" 
+           data-image="sample2-large.jpg" 
+           style="background-image: url('sample2.jpg');"></div>
+    </div>
+
+    <div class="news-item">
+      <div class="news-text">
+        <h2>写実・Premium</h2>
+        <p>会期：2021年4月21日（水）→27日（火）<br>
+        会場：岡山天満屋 5階 美術画廊</p>
+      </div>
+      <div class="news-image" 
+           data-image="sample2-large.jpg" 
+           style="background-image: url('sample2.jpg');"></div>
+    </div>
+
+    <div class="news-item">
+      <div class="news-text">
+        <h2>I LOVE CATS !</h2>
+        <p>会期：2021年7月1日（木）～30日（金）<br>
+        会場：玉川髙島屋 本館5階 アートサロン</p>
+      </div>
+      <div class="news-image" 
+           data-image="sample2-large.jpg" 
+           style="background-image: url('sample2.jpg');"></div>
+    </div>
+
+    <div class="news-item">
+      <div class="news-text">
+        <h2>NEWリアリズム展</h2>
+        <p>会期：2021年1月20日（水）→25日（月）<br>
+        会場：福山天満屋 6階美術画廊</p>
+      </div>
+      <div class="news-image" 
+           data-image="sample2-large.jpg" 
+           style="background-image: url('sample2.jpg');"></div>
+    </div>
+
+    <div class="news-item">
+      <div class="news-text">
+        <h2>ANMico －畠中彩･松尾奈保･岡本実佳枝－</h2>
+        <p>会期：2020年11月20日（金）→28日（土）<br>
+        会場：東邦アート</p>
+      </div>
+      <div class="news-image" 
+           data-image="sample2-large.jpg" 
+           style="background-image: url('sample2.jpg');"></div>
+    </div>
+
+    <div class="news-item">
+      <div class="news-text">
+        <h2>岡本実佳枝展 －START 10－</h2>
+        <p>会期：2019年11月20日（金）→28日（土）<br>
+        会場：coffee shop LEGATO</p>
+      </div>
+      <div class="news-image" 
+           data-image="sample2-large.jpg" 
+           style="background-image: url('sample2.jpg');"></div>
+    </div>
+  </div>
+
+  <!-- モーダル -->
+  <div class="modal" id="modal">
+    <span class="modal-close" id="modalClose">&times;</span>
+    <div class="modal-content">
+      <img src="" alt="拡大画像" id="modalImg">
+    </div>
+  </div>
+
+  </main>
+
+<footer class="site-footer">
+    <small>&copy;2025 Mikae Okamoto
+</small>
+  </footer>
+  </div>
+
+  <script>
+    const modal = document.getElementById("modal");
+    const modalImg = document.getElementById("modalImg");
+    const modalClose = document.getElementById("modalClose");
+
+    // 画像クリックでモーダルを開く
+    document.querySelectorAll(".news-image").forEach(img => {
+      img.addEventListener("click", () => {
+        const largeImage = img.getAttribute("data-image");
+        modalImg.src = largeImage;
+        modal.classList.add("active");
+      });
+    });
+
+    // 閉じるボタン
+    modalClose.addEventListener("click", () => {
+      modal.classList.remove("active");
+      modalImg.src = "";
+    });
+
+    // 背景クリックで閉じる
+    modal.addEventListener("click", (e) => {
+      if (e.target === modal) {
+        modal.classList.remove("active");
+        modalImg.src = "";
+      }
+    });
+  </script>
+</body>
+</html>
