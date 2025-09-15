@@ -391,7 +391,7 @@ section {
   gap: 15px;
   text-decoration: none;
   font-weight: 100;
-  color: #333;
+  color: #222;
   font-size: 1.1rem;
   transition: color 0.3s ease;
   position: relative;
@@ -408,7 +408,7 @@ section {
   position: relative;
   overflow: hidden;
   transition: border-color 0.3s ease;
-  color: #000; /* 矢印の基準色（黒） */
+  color: #222; /* 矢印の基準色（黒） */
   flex-shrink: 0; /* ← SVG が縮小・拡大されないように */
 }
 
@@ -416,7 +416,7 @@ section {
   content: "";
   position: absolute;
   inset: 0;
-  background: #000;
+  background: #222;
   border-radius: 50%;
   transform: scale(0);
   transform-origin: center;
