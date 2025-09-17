@@ -69,6 +69,12 @@ button {
   margin: 0;
 }
 
+.lead{
+  font-feature-settings: "pkna";
+  vertical-align: middle;
+  margin: auto;
+}
+
 table {
   border-collapse: collapse;
 }
@@ -281,10 +287,13 @@ section {
   max-width: 1080px;
 }
 
-.intro{
-  margin-top: 50vh;
+.intro_box {
+  display: flex;
+  height: 50vh;;
+  float: right;
+  width: calc(50% - 20px);
+  align-items: center;
 }
-
 .contact{
   width: 100%;
   vertical-align: middle;
