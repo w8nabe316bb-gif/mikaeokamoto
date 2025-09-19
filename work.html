@@ -141,11 +141,30 @@ a {
       overflow-y: auto;
       opacity: 0;
     }
+        
+  .item {
+    height: auto;
+  padding: 0;
+  opacity: 0;
+  transform: translateY(20px) scale(0.98);
+  transition: opacity 0.45s cubic-bezier(0.22, 1, 0.36, 1),
+              transform 0.45s cubic-bezier(0.22, 1, 0.36, 1);
+  will-change: opacity, transform;
+}
 
-    .item{
-      height: auto;
-      padding: 0;
-    }
+.item.active {
+  opacity: 1;
+  transform: translateY(0) scale(1);
+}
+
+.item.hidden {
+  opacity: 0;
+  pointer-events: none;
+  position: absolute;
+  visibility: hidden;
+}
+
+
 
     .item img{
       display: block;
@@ -417,28 +436,53 @@ a {
 
 const filterBtn = document.getElementById("filterBtn");
 const items = document.querySelectorAll(".item");
-
-// フィルターの順番を定義
 const filters = ["全て", "人物", "フジツボ", "猫", "その他"];
 let currentIndex = 0;
 
+// 初回アニメーション
+function animateItems() {
+  items.forEach((item, index) => {
+    setTimeout(() => {
+      item.classList.add("active");
+    }, index * 80); // ← 間隔を短め
+  });
+}
+window.addEventListener("load", animateItems);
+
+// フィルタ処理
 filterBtn.addEventListener("click", () => {
-  // 次のフィルタに進める
   currentIndex = (currentIndex + 1) % filters.length;
   const filter = filters[currentIndex];
-
-  // ボタンのラベルを変更
   filterBtn.textContent = filter;
 
-  // 表示切替
+  // 1. 一旦全てフェードアウト
   items.forEach(item => {
-    if (filter === "全て" || item.dataset.tag === filter) {
-      item.classList.remove("hidden");
-    } else {
-      item.classList.add("hidden");
-    }
+    item.classList.remove("active");
   });
+
+  // 2. フェードアウト完了後に非表示にしてから対象をフェードイン
+  setTimeout(() => {
+    items.forEach(item => {
+      if (filter === "全て" || item.dataset.tag === filter) {
+        item.classList.remove("hidden");
+      } else {
+        item.classList.add("hidden");
+      }
+    });
+
+    // 3. 少し待ってから左上から順番にフェードイン
+    const visibleItems = Array.from(items).filter(
+      item => !item.classList.contains("hidden")
+    );
+
+    visibleItems.forEach((item, index) => {
+      setTimeout(() => {
+        item.classList.add("active");
+      }, index * 80 + 40); // ← 前の消えと少し被せる
+    });
+  }, 400); // フェードアウト時間に合わせる
 });
+
 
 
 

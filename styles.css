@@ -8,7 +8,7 @@ html {
   font-variant-numeric: lining-nums tabular-nums;
   font-feature-settings: "lnum", "tnum", "palt";
   font-weight: 100;
-  letter-spacing: 0.04em;
+  letter-spacing: 0.06em;
   color: #222;
   background: #efedec;
   vertical-align: top;
@@ -73,6 +73,8 @@ button {
   font-feature-settings: "pkna";
   vertical-align: middle;
   margin: auto;
+  letter-spacing: 0.2rem;
+  line-height: 2.4rem;
 }
 
 table {
@@ -465,6 +467,27 @@ section {
   animation: arrow-move 1s ease-in-out infinite;
 }
 
+.btn {
+  display: inline-flex;      /* 横並び + 中央揃え */
+  align-items: center;       /* アイコンとテキストを上下中央揃え */
+  gap: 8px;                  /* アイコンと文字の間隔 */
+  padding: 8px 0px;
+  color: #222;
+  text-decoration: none;     /* aタグ用 */
+  cursor: pointer;           /* buttonでもポインタに */
+  transition: background 0.3s, color 0.3s;
+}
+
+.btn svg {
+  width: 30px;
+  height: 30px;
+  flex-shrink: 0; 
+  opacity: 0.25;
+}
+
+.btn:hover {
+  color:  rgb(16, 196, 139);
+}
 
 
 
@@ -490,5 +513,8 @@ section {
 
 .portrait {
   margin-bottom: 50px;
+}
+.intro_box {
+  width: 100%;
 }
 }
